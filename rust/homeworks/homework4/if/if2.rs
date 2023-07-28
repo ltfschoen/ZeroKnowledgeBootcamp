@@ -4,14 +4,22 @@
 // Step 2: Get the bar_for_fuzz and default_to_baz tests passing!
 // Execute the command `zustlings hint if2` if you want a hint :)
 
-// I AM NOT DONE
-
-pub fn fizz_if_foo(fizzish: &str) -> &str {
-    if fizzish == "fizz" {
-        "foo"
-    } 
-    else {
-        1
+// https://stackoverflow.com/questions/58862093/returns-a-value-referencing-data-owned-by-the-current-function
+pub fn fizz_if_foo(fizzish: &str) -> String {
+    // if fizzish == "fizz" {
+    //     "foo".to_string()
+    // }
+    // else if fizzish == "fuzz" {
+    //     "bar".to_string()
+    // }
+    // else {
+    //     // 1.to_string()
+    //     "baz".to_string()
+    // }
+    match fizzish {
+        "fizz" => "foo".to_string(),
+        "fuzz" => "bar".to_string(),
+        _ => "baz".to_string(),
     }
 }
 
